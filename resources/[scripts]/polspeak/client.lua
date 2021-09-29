@@ -1,5 +1,5 @@
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu("ShadowX Police", "~b~POLICE MEGAPHONE")
+mainMenu = NativeUI.CreateMenu("DesiX Police", "~b~POLICE MEGAPHONE")
 _menuPool:Add(mainMenu)
 
 function AddMenuAnotherMenu(menu)

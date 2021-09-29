@@ -1,7 +1,7 @@
 -- CONFIG --
 
 -- The watermark text --
-servername = "ServerX Roleplay - Powered by ExtremeX"
+servername = "Desi X Roleplay"
 
 -- The x and y offset (starting at the top left corner) --
 -- Default: 0.005, 0.001
