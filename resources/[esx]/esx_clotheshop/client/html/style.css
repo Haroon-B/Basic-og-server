@@ -1,0 +1,414 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Syncopate|Unica+One');
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+
+body, html {
+	overflow-y: hidden;
+}
+/* main.css */
+button {
+
+	margin: 5px auto;
+	padding: 10px 24px;
+	cursor: pointer;
+	width: 25%;
+	display: block;
+	text-transform: uppercase;
+    font-family: 'Unica One';
+	font-size: 12px;
+	color: white;
+    background-color: rgba(0,0,0,0.8);
+	border-style: none;
+    border: 0px;
+	opacity: 0.7;
+}
+
+.numer-polki{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 3px;
+}
+
+.sklepodziezowy {
+	font-family: 'Roboto', sans-serif;
+	height: auto;
+	background: ;
+	color: white;
+	width: 700px;
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	margin-top: -333px;
+	margin-left: -800px;
+	padding-bottom: 20px;
+	-webkit-touch-callout: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.sklepodziezowy img{
+ -webkit-touch-callout: none;
+}
+
+.div_button {
+	margin: 5px 5px;
+	cursor: pointer;
+	width: 95px;
+	height: 95px;
+	display: block;
+	text-transform: uppercase;
+    font-family: 'Unica One';
+	font-size: 12px;
+	color: white;
+    background-color: rgba(0,0,0,0.8);
+	border-style: none;
+	border: 2px solid #98D4E0;
+	border-radius: 15px;
+	opacity: 1;
+	text-align:center;
+	float:left;
+	position:relative;
+	opacity: 0.7;
+}
+
+.div_button:nth-child(3n+1) {
+	clear:left;
+}
+
+.div_button_sklep {
+	margin: 3px 3px;
+	cursor: pointer;
+	width: 86;
+	height: 86;
+	display: block;
+	text-transform: uppercase;
+    font-family: 'Unica One';
+	font-size: 12px;
+	color: white;
+    background-color: rgba(0,0,0,0.9);
+	border-style: none;
+    border: 2px solid #98D4E0;
+	border-radius: 15px;
+	opacity: 1;
+	text-align:center;
+	float:left;
+	position:relative;
+	opacity: 0.7;
+}
+
+.div_button_sklep:nth-child(11n+1) {
+	clear:left;
+}
+
+.div_button_sklep img{
+	position:absolute;
+	top:50%;
+	transform:translate(-50%, -50%);
+	left:50%;
+	max-width:70%;
+}
+
+.div_button_sklep2 {
+	margin: 3px 3px;
+	cursor: pointer;
+	width: 41;
+	height: 86;
+	display: block;
+	text-transform: uppercase;
+    font-family: 'Unica One';
+	font-size: 12px;
+	color: white;
+    background-color: rgba(0,0,0,0.9);
+	border-style: none;
+    border: 2px solid #98D4E0;
+	border-radius: 15px;
+	opacity: 1;
+	text-align:center;
+	float:left;
+	position:relative;
+	opacity: 0.7;
+}
+
+.div_button_sklep2:hover {
+	border: 2px solid #0e718b;
+}
+
+.div_button_sklep2:nth-child(11n+1) {
+	clear:left;
+}
+
+.div_button_sklep_blind {
+	margin: 3px 3px;
+	cursor: pointer;
+	width: 41;
+	height: 86;
+	display: block;
+	text-transform: uppercase;
+    font-family: 'Unica One';
+	font-size: 12px;
+	color: white;
+    background: none;
+	border-style: none;
+    border: 0px;
+	opacity: 1;
+	text-align:center;
+	float:left;
+	position:relative;
+	opacity: 0.7;
+}
+
+.div_button_sklep_blind:nth-child(11n+1) {
+	clear:left;
+}
+
+.div_button_sklep3 {
+	margin: 3px 3px;
+	cursor: pointer;
+	width: 140;
+	height: 86;
+	display: block;
+	text-transform: uppercase;
+    font-family: 'Unica One';
+	font-size: 12px;
+	color: white;
+    background-color: rgba(0,0,0,0.9);
+	border-style: none;
+    border: 2px solid #98D4E0;
+	border-radius: 15px;
+	opacity: 1;
+	text-align:center;
+	float:left;
+	position:relative;
+	opacity: 0.7;
+}
+
+.div_button_sklep3:hover {
+	border: 2px solid #0e718b;
+}
+
+.div_button_sklep3:nth-child(6n+1) {
+	clear:left;
+}
+
+.icon_span{
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:75px;
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+}
+
+/** IKONKI UBRAŃ **/
+.clothes_hat span{
+	background-image: url(img/czapka1.png);
+}
+
+.clothes_hat:hover span{
+	background-image: url(img/czapka.png);
+}
+
+.clothes_mask span{
+	background-image: url(img/maska1.png);
+	background-size:50px;
+}
+
+.clothes_mask:hover span{
+	background-image: url(img/maska.png);
+}
+
+.clothes_glasses span{
+	background-image: url(img/okulary3.png);
+}
+
+.clothes_glasses:hover span{
+	background-image: url(img/okulary2.png);
+}
+
+.clothes_watch span{
+	background-image: url(img/zegarek1.png);
+	background-size:50px;
+}
+
+.clothes_watch:hover span{
+	background-image: url(img/zegarek.png);
+}
+
+.clothes_wrist span{
+	background-image: url(img/bransoletka1.png);
+}
+
+.clothes_wrist:hover span{
+	background-image: url(img/bransoletka.png);
+}
+
+.clothes_earrings span{
+	background-image: url(img/kolczyki1.png);
+}
+
+.clothes_earrings:hover span{
+	background-image: url(img/kolczyki.png);
+}
+
+.clothes_reszta span{
+	background-image: url(img/kurtka1.png);
+}
+
+.clothes_reszta:hover span{
+	background-image: url(img/kurtka.png);
+}
+
+.clothes_kurtka span{
+	background-image: url(img/kurtka1.png);
+}
+
+.clothes_kurtka:hover span{
+	background-image: url(img/kurtka.png);
+}
+
+.clothes_buty span{
+	background-image: url(img/buty1.png);
+}
+
+.clothes_buty:hover span{
+	background-image: url(img/buty.png);
+}
+
+.clothes_szyja span{
+	background-image: url(img/szyja1.png);
+}
+
+.clothes_szyja:hover span{
+	background-image: url(img/szyja.png);
+}
+
+.clothes_torba span{
+	background-image: url(img/torba1.png);
+}
+
+.clothes_torba:hover span{
+	background-image: url(img/torba.png);
+}
+
+.clothes_kamizelka span{
+	background-image: url(img/kamizelka1.png);
+}
+
+.clothes_kamizelka:hover span{
+	background-image: url(img/kamizelka.png);
+}
+
+.clothes_spodnie span{
+	background-image: url(img/spodnie1.png);
+}
+
+.clothes_spodnie:hover span{
+	background-image: url(img/spodnie.png);
+}
+
+/** SKLEP ODZIEZOWY **/
+
+.clothes_rotateleft span{
+	background-image: url(img/rotateleft1.png);
+	background-size: 40% 70%;
+}
+
+.clothes_rotateleft:hover span{
+	background-image: url(img/rotateleft.png);
+}
+
+.clothes_rotateright span{
+	background-image: url(img/rotateright1.png);
+	background-size: 40% 70%;
+}
+
+.clothes_rotateright:hover span{
+	background-image: url(img/rotateright.png);
+}
+
+.clothes_tick span{
+	background-image: url(img/tick1.png);
+	background-size: 35% 50%;
+}
+
+.clothes_tick:hover span{
+	background-image: url(img/tick.png);
+}
+
+.clothes_left span{
+	background-image: url(img/arrowleft1.png);
+	background-size: 120% 45%;
+}
+
+.clothes_left:hover span{
+	background-image: url(img/arrowleft.png);
+}
+
+.clothes_right span{
+	background-image: url(img/arrowright1.png);
+	background-size: 120% 45%;
+}
+
+.clothes_right:hover span{
+	background-image: url(img/arrowright.png);
+}
+
+.clothes_left1 span{
+	background-image: url(img/arrowleft1.png);
+	background-size: 66% 25%;
+}
+
+.clothes_left1:hover span{
+	background-image: url(img/arrowleft.png);
+}
+
+.clothes_right1 span{
+	background-image: url(img/arrowright1.png);
+	background-size: 66% 25%;
+}
+
+.clothes_right1:hover span{
+	background-image: url(img/arrowright.png);
+}
+
+/** IKONKI OGÓLNE **/
+.close_icon span{
+	background-image: url(img/zamknij1.png);
+	background-size:40px;
+}
+
+.close_icon:hover span{
+	background-image: url(img/zamknij.png);
+}
+
+.back_icon span{
+	background-image: url(img/wroc1.png);
+	background-size:50px;
+}
+
+.back_icon:hover span{
+	background-image: url(img/wroc.png);
+}
+
+/* change look of buttons when hovering over them */
+button:hover {
+	border: 2px solid #0e718b;
+	color: #98D4E0;
+	font-transform: bold;
+}
+
+.div_button:hover{
+	border: 2px solid #0e718b;
+	color: #98D4E0;
+	font-transform: bold;
+}

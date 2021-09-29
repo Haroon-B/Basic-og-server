@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+
+		<style>
+    	.sklepodziezowy {display: none;}
+		</style>
+
+	<script>
+	$(function() {
+		/* open the UI for user */
+
+    function setClothesNumbers(key,value){
+        				$('#'+key+'-styl').text(value);
+            }
+            function setColorsNumbers(key,value){
+        				$('#'+key+'-kolor').text(value);
+            }
+
+            window.addEventListener('message', function(event) {
+
+            if(event.data.action == 'fillClothesNumbers'){
+                setClothesNumbers(event.data.key, event.data.value)
+            }
+            if(event.data.action == 'fillColorsNumbers'){
+                setColorsNumbers(event.data.key, event.data.value)
+            }
+
+			if (event.data.type == "opensklepodziezowy"){
+				$('.sklepodziezowy').css('display', 'block')
+
+			} else if (event.data.type == "closeAll"){
+				$('.sklepodziezowy').css('display', 'none')
+			}
+		});
+	});
+	</script>
+
+	</head>
+
+    <body>
+
+
+	<div class="sklepodziezowy">
+		<div class="main">
+			<div class="div_button_sklep2 clothes_left1" id="czapka1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="czapkaMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/czapka1.png" />
+				<div class="numer-polki"><span id="czapka-styl"></span> : <span id="czapka-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="czapkaPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="czapka1Plus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep_blind"></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="okulary1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="okularyMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/okulary3.png" />
+				<div class="numer-polki"><span id="okulary-styl"></span> : <span id="okulary-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="okularyPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="okulary1Plus"><span class="icon_span"></span></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="maska1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="maskaMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/maska1.png" />
+				<div class="numer-polki"><span id="maska-styl"></span> : <span id="maska-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="maskaPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="maska1Plus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep_blind"></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="szyja1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="szyjaMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/szyja1.png" />
+				<div class="numer-polki"><span id="szyja-styl"></span> : <span id="szyja-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="szyjaPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="szyja1Plus"><span class="icon_span"></span></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="koszulka1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="koszulkaMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/koszulka1.png" />
+				<div class="numer-polki"><span id="koszulka-styl"></span> : <span id="koszulka-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="koszulkaPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="koszulka1Plus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep_blind"></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="kurtka1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="kurtkaMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/kurtka1.png" />
+				<div class="numer-polki"><span id="kurtka-styl"></span> : <span id="kurtka-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="kurtkaPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="kurtka1Plus"><span class="icon_span"></span></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="zegarek1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="zegarekMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/zegarek1.png" width="50%" height="65%"/>
+				<div class="numer-polki"><span id="zegarek-styl"></span> : <span id="zegarek-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="zegarekPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="zegarek1Plus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep_blind"></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="branzoleta1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="branzoletaMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/bransoletka1.png" />
+				<div class="numer-polki"><span id="branzoleta-styl"></span> : <span id="branzoleta-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="branzoletaPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="branzoleta1Plus"><span class="icon_span"></span></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="rece1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="receMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/rekawiczki1.png" />
+				<div class="numer-polki"><span id="rece-styl"></span> : <span id="rece-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="recePlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="rece1Plus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep_blind"></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="torba1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="torbaMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/torba1.png" />
+				<div class="numer-polki"><span id="torba-styl"></span> : <span id="torba-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="torbaPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="torba1Plus"><span class="icon_span"></span></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="spodnie1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="spodnieMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/spodnie1.png" />
+				<div class="numer-polki"><span id="spodnie-styl"></span> : <span id="spodnie-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="spodniePlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="spodnie1Plus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep_blind"></div>
+
+			<div class="div_button_sklep2 clothes_left1" id="buty1Minus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_left" id="butyMinus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep">
+				<img src="/client/html/img/buty1.png" />
+				<div class="numer-polki"><span id="buty-styl"></span> : <span id="buty-kolor"></span></div>
+			</div>
+			<div class="div_button_sklep2 clothes_right" id="butyPlus"><span class="icon_span"></span></div>
+			<div class="div_button_sklep2 clothes_right1" id="buty1Plus"><span class="icon_span"></span></div>
+
+			<div class="div_button_sklep3 clothes_rotateleft" id="rotateLeft"><span class="icon_span"></span></div>
+			<div class="div_button_sklep3 clothes_rotateright" id="rotateRight"><span class="icon_span"></span></div>
+			<div class="div_button_sklep_blind"></div>
+			<div class="div_button_sklep3 clothes_tick" id="exit14_gui"><span class="icon_span"></span></div>
+			<div class="div_button_sklep3 close_icon" id="exit13_gui"><span class="icon_span"></span></div>
+		</div>
+	</div>
+
+    </body>
+
+
+
+
+
+	<script type="text/javascript">
+
+$	("#exit13_gui").click(function(){
+		$('.sklepodziezowy').css('display', 'none')
+		$.post('http://welldone_sklepodziezowy/NUIFocusOff', JSON.stringify({}));
+		$.post('http://welldone_sklepodziezowy/AnulujUbranie', JSON.stringify({}));
+	});
+
+	$("#exit14_gui").click(function(){
+		$('.sklepodziezowy').css('display', 'none')
+		$.post('http://welldone_sklepodziezowy/NUIFocusOff', JSON.stringify({}));
+		$.post('http://welldone_sklepodziezowy/ZapiszUbranie', JSON.stringify({}));
+	});
+
+
+	$("#rotateLeft").click(function(){
+		$.post('http://welldone_sklepodziezowy/rotateLeft', JSON.stringify({}));
+	});
+	$("#rotateRight").click(function(){
+		$.post('http://welldone_sklepodziezowy/rotateRight', JSON.stringify({}));
+	});
+
+	$('.clothes_right, .clothes_left, .clothes_right1, .clothes_left1').mousedown(function(e){
+		if(e.which == 1){
+		var id = $(this).attr('id');
+		$.post('http://welldone_sklepodziezowy/'+id, JSON.stringify({}));
+		timeout = setInterval(function () {
+				$.post('http://welldone_sklepodziezowy/'+id, JSON.stringify({}));
+			}, 250);
+		}
+	});
+
+	$('.clothes_right, .clothes_left, .clothes_right1, .clothes_left1, .clothes_rotateleft, .clothes_rotateright').mouseup(function () {
+		clearInterval(timeout);
+		return false;
+	});
+
+	$('.clothes_right, .clothes_left, .clothes_right1, .clothes_left1, .clothes_rotateleft, .clothes_rotateright').mouseout(function () {
+		clearInterval(timeout);
+		return false;
+	});
+
+	document.onkeyup = function (data) {
+		if (data.which == 27) { // Escape key
+  			$('.sklepodziezowy').css('display', 'none')
+			$.post('http://welldone_sklepodziezowy/NUIFocusOff', JSON.stringify({}));
+			$('.delete').hide()
+		}
+	};
+
+	</script>
+</html>
