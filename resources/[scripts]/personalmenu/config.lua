@@ -23,7 +23,7 @@ Config.JSFourIDCard = false -- enable if you're using jsfour-idcard
 
 -- CONTROLS --
 Config.Controls = {
-	OpenMenu = {keyboard = Keys['F4']},
+	OpenMenu = {keyboard = Keys['F2']},
 	HandsUP = {keyboard = Keys['~']},
 	Pointing = {keyboard = Keys['B']},
 	Crouch = {keyboard = Keys['LEFTCTRL']},
