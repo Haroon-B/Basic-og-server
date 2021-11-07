@@ -7,6 +7,17 @@ RegisterServerEvent('_chat:messageEntered')
 RegisterServerEvent('chat:clear')
 RegisterServerEvent('__cfx_internal:commandFallback')
 
+
+RegisterCommand("announcesv", function(source, args, raw)
+    if source == 0 or source == nil or source == '' then
+        print(table.concat(args, " "))
+        TriggerClientEvent('chat:addMessage', -1, {
+            template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(200, 0, 50, 1); border-radius: 3px;"><i class="fas fa-cog"></i> SYSTEM:<br> {1}<br></div>',
+            args = { "ANNOUNCEMENT", table.concat(args, " ") }
+        })
+    end
+end)
+
 AddEventHandler('_chat:messageEntered', function(author, color, message)
     if not message or not author then
         return
@@ -15,7 +26,7 @@ AddEventHandler('_chat:messageEntered', function(author, color, message)
     TriggerEvent('chatMessage', source, author, message)
 
     if not WasEventCanceled() then
-     --   TriggerClientEvent('chatMessage', -1, author,  { 255, 255, 255 }, message)
+        TriggerClientEvent('chatMessage', -1, author,  { 255, 255, 255 }, message)
     end
 
     print(author .. '^7: ' .. message .. '^7')
@@ -40,10 +51,6 @@ end)
 
 AddEventHandler('playerDropped', function(reason)
     TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) ..' left (' .. reason .. ')')
-end)
-
-RegisterCommand('say', function(source, args, rawCommand)
-    TriggerClientEvent('chatMessage', -1, (source == 0) and 'console' or GetPlayerName(source), { 255, 255, 255 }, rawCommand:sub(5))
 end)
 
 -- command suggestions for clients

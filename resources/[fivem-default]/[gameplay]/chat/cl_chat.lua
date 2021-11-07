@@ -19,20 +19,6 @@ RegisterNetEvent('__cfx_internal:serverPrint')
 RegisterNetEvent('_chat:messageEntered')
 
 --deprecated, use chat:addMessage
-AddEventHandler('chatMessage', function(author, color, text)
-  local args = { text }
-  if author ~= "" then
-    table.insert(args, 1, author)
-  end
-  SendNUIMessage({
-    type = 'ON_MESSAGE',
-    message = {
-      color = color,
-      multiline = true,
-      args = args
-    }
-  })
-end)
 
 AddEventHandler('__cfx_internal:serverPrint', function(msg)
   print(msg)
@@ -47,12 +33,40 @@ AddEventHandler('__cfx_internal:serverPrint', function(msg)
   })
 end)
 
-AddEventHandler('chat:addMessage', function(message)
-  SendNUIMessage({
-    type = 'ON_MESSAGE',
-    message = message
-  })
+local chatStatus;
+chatStatus = true;
+
+RegisterCommand("chat", function()
+    if chatStatus then
+        chatStatus = false
+    else
+        chatStatus = true
+    end
+    SendNUIMessage({
+        type = 'ON_MESSAGE',
+        message = {
+            template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(255, 0, 0, 0.6); border-radius: 3px;"><i class="fas fa-user-cog"></i> {0}:<br> {1}</div>',
+            args = { "SYSTEM", "Chat has been set to " .. tostring(chatStatus)}
+        }
+    })
 end)
+
+AddEventHandler('chat:addMessage', function(message)
+    if chatStatus then
+        SendNUIMessage({
+            type = 'ON_MESSAGE',
+            message = message
+        })
+    end
+end)
+
+AddEventHandler('chat:addMessagesv', function(message)
+      SendNUIMessage({
+          type = 'ON_MESSAGE',
+          message = message
+      })
+end)
+
 
 AddEventHandler('chat:addSuggestion', function(name, help, params)
   SendNUIMessage({

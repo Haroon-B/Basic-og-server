@@ -1,17 +1,17 @@
 Locales = {}
 
-function _(str, ...)  -- Translate string
+function _(str, ...)  -- Traduzir string
 
 	if Locales[Config.Locale] ~= nil then
 
 		if Locales[Config.Locale][str] ~= nil then
 			return string.format(Locales[Config.Locale][str], ...)
 		else
-			return 'Translation [' .. Config.Locale .. '][' .. str .. '] does not exist'
+			return 'Tradução [' .. Config.Locale .. '][' .. str .. '] não existe'
 		end
 
 	else
-		return 'Locale [' .. Config.Locale .. '] does not exist'
+		return 'Locale [' .. Config.Locale .. '] não existe'
 	end
 
 end

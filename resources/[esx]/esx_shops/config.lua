@@ -343,10 +343,9 @@ Config = {
              {label = "Portable Methlab", item = "methlab", price = 5000},
              {label = "Acetone", item = "acetone", price = 200},
              {label = "Lithium Batteries", item = "lithium", price = 500},
-             {label = "Repair Kit", item = "fixkit", price = 1000},			 
-             
-             
+             {label = "Repair Kit", item = "fixkit", price = 1000},		
+             {label = "Phone", item = "white_phone", price = 1000},			
+             {label = "Pendrive", item = "pendrive", price = 1000},	
 		},    
-		
     },
 }

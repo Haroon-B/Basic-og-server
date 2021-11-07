@@ -61,9 +61,8 @@ Citizen.CreateThread(function()
 							SetVehicleDoorShut(carstrie[i], 2, false)
 							SetVehicleDoorShut(carstrie[i], 3, false)
 							SetVehicleDoorsLocked(carstrie[i], 2)
-							PlayVehicleDoorCloseSound(carstrie[i], 1)
 							--exports.pNotify:SendNotification({layout="centerLeft",type="success",timeout=500,progressbar=false,text='Locked '..vehicleLabel})
-							ESX.ShowNotification('You have ~r~locked~s~ your ~y~'..vehicleLabel..'~s~.')
+							ESX.ShowNotification('You have locked your '..vehicleLabel..'.')
 							if not IsPedInAnyVehicle(PlayerPedId(), true) then
 								TaskPlayAnim(PlayerPedId(), dict, "fob_click_fp", 8.0, 8.0, -1, 48, 1, false, false, false)
 							end
@@ -79,7 +78,7 @@ Citizen.CreateThread(function()
 							SetVehicleDoorsLocked(carstrie[i], 1)
 							PlayVehicleDoorOpenSound(carstrie[i], 0)
 							--exports.pNotify:SendNotification({layout="centerLeft",type="error",timeout=500,progressbar=false,text='Unlocked '..vehicleLabel})
-							ESX.ShowNotification('You have ~g~unlocked~s~ your ~y~'..vehicleLabel..'~s~.')
+							ESX.ShowNotification('You have unlocked your '..vehicleLabel..'.')
 							if not IsPedInAnyVehicle(PlayerPedId(), true) then
 								TaskPlayAnim(PlayerPedId(), dict, "fob_click_fp", 8.0, 8.0, -1, 48, 1, false, false, false)
 							end

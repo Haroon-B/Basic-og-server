@@ -1,33 +1,30 @@
-function TchatGetMessageChannel (channel, cb)
-    MySQL.Async.fetchAll("SELECT * FROM phone_app_chat WHERE channel = @channel ORDER BY time DESC LIMIT 100", { 
-        ['@channel'] = channel
-    }, cb)
+--
+--  LEAKED BY S3NTEX -- 
+--  https://discord.gg/aUDWCvM -- 
+--  fivemleak.com -- 
+--  fkn crew -- 
+
+function TchatGetMessageChannel(a,b)
+    MySQL.Async.fetchAll("SELECT * FROM phone_app_chat WHERE channel = @channel ORDER BY time DESC LIMIT 100",{['@channel']=a},b)
 end
 
-function TchatAddMessage (channel, message)
-  local Query = "INSERT INTO phone_app_chat (`channel`, `message`) VALUES(@channel, @message);"
-  local Query2 = 'SELECT * from phone_app_chat WHERE `id` = @id;'
-  local Parameters = {
-    ['@channel'] = channel,
-    ['@message'] = message
-  }
-  MySQL.Async.insert(Query, Parameters, function (id)
-    MySQL.Async.fetchAll(Query2, { ['@id'] = id }, function (reponse)
-      TriggerClientEvent('gcPhone:tchat_receive', -1, reponse[1])
+function TchatAddMessage(a,b)
+    MySQL.Async.insert("INSERT INTO phone_app_chat (channel, message) VALUES(@channel, @message)",{['@channel']=a,['@message']=b},function(c)
+        MySQL.Async.fetchAll("SELECT * from phone_app_chat WHERE id = @id",{['@id']=c},function(d)TriggerClientEvent('gcPhone:tchat_receive',-1,d[1])
+        end)
     end)
-  end)
 end
-
 
 RegisterServerEvent('gcPhone:tchat_channel')
-AddEventHandler('gcPhone:tchat_channel', function(channel)
-  local sourcePlayer = tonumber(source)
-  TchatGetMessageChannel(channel, function (messages)
-    TriggerClientEvent('gcPhone:tchat_channel', sourcePlayer, channel, messages)
-  end)
+AddEventHandler('gcPhone:tchat_channel',function(a)
+    local b=tonumber(source)TchatGetMessageChannel(a,function(c)
+        TriggerClientEvent('gcPhone:tchat_channel',b,a,c)
+    end)
 end)
 
 RegisterServerEvent('gcPhone:tchat_addMessage')
-AddEventHandler('gcPhone:tchat_addMessage', function(channel, message)
-  TchatAddMessage(channel, message)
+AddEventHandler('gcPhone:tchat_addMessage',function(a,b)
+    TchatAddMessage(a,b)
 end)
+
+

@@ -2,16 +2,26 @@
 --  GNU AFFERO GENERAL PUBLIC LICENSE  --
 --     Version 3, 19 November 2007     --
 
-local loaded = false
-local oldPos
-local pvpEnabled = false
-
-Citizen.CreateThread(function()
+local enablePositionSending = true
+local UpdateTickTime = 5000
+CreateThread(function()
 	while true do
-		Citizen.Wait(1000)
-		local pos = GetEntityCoords(PlayerPedId())
+		Wait(0)
+		if NetworkIsSessionStarted() then
+			TriggerServerEvent('es:firstJoinProper')
+			TriggerEvent('es:allowedToSpawn')
+			return
+		end
+	end
+end)
 
-		if(oldPos ~= pos)then
+local oldPos = vector3(0, 0, 0)
+CreateThread(function()
+	while enablePositionSending do
+		Wait(UpdateTickTime)
+		local playerPed = PlayerPedId()
+		local pos = GetEntityCoords(playerPed)
+		if #(oldPos - pos) > 10 then
 			TriggerServerEvent('es:updatePositions', pos.x, pos.y, pos.z)
 			oldPos = pos
 		end
@@ -19,7 +29,6 @@ Citizen.CreateThread(function()
 end)
 
 local myDecorators = {}
-
 RegisterNetEvent("es:setPlayerDecorator")
 AddEventHandler("es:setPlayerDecorator", function(key, value, doNow)
 	myDecorators[key] = value
@@ -30,9 +39,6 @@ AddEventHandler("es:setPlayerDecorator", function(key, value, doNow)
 	end
 end)
 
-local enableNative = {}
-
-local firstSpawn = true
 AddEventHandler("playerSpawned", function()
 	for k,v in pairs(myDecorators)do
 		DecorSetInt(PlayerPedId(), k, v)
@@ -41,7 +47,7 @@ AddEventHandler("playerSpawned", function()
 	TriggerServerEvent('playerSpawn')
 end)
 
-RegisterNetEvent("es:enablePvp")
-AddEventHandler("es:enablePvp", function()
-	pvpEnabled = true
+RegisterNetEvent("es:disableClientPosition")
+AddEventHandler("es:disableClientPosition", function()
+	enablePositionSending = false
 end)

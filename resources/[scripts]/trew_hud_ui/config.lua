@@ -2,7 +2,7 @@ Config = {}
 
 Config.Locale = 'en'
 
-Config.serverLogo = '#'
+Config.serverLogo = 'https://cdn.discordapp.com/attachments/798200254784339979/898309923774021673/logo_9.png'
 
 Config.font = {
 	name 	= 'Montserrat',
@@ -43,7 +43,7 @@ Config.vehicle = {
 }
 
 Config.ui = {
-	showServerLogo		= false,
+	showServerLogo		= true,
 
 	showJob		 		= true,
 

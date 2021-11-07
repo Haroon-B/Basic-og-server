@@ -1,11 +1,9 @@
--- Author: Xinerki (https://forum.fivem.net/t/release-cellphone-camera/43599)
-
 phone = false
 phoneId = 0
 
 RegisterNetEvent('camera:open')
 AddEventHandler('camera:open', function()
-    CreateMobilePhone(1)
+    CreateMobilePhone(0)
 	CellCamActivate(true, true)
 	phone = true
     PhonePlayOut()

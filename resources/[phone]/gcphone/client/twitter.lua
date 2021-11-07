@@ -1,7 +1,3 @@
---====================================================================================
--- #Author: Jonathan D @ Gannon
---====================================================================================
-
 RegisterNetEvent("gcPhone:twitter_getTweets")
 AddEventHandler("gcPhone:twitter_getTweets", function(tweets)
   SendNUIMessage({event = 'twitter_tweets', tweets = tweets})
@@ -23,13 +19,8 @@ AddEventHandler("gcPhone:twitter_updateTweetLikes", function(tweetId, likes)
 end)
 
 RegisterNetEvent("gcPhone:twitter_setAccount")
-AddEventHandler("gcPhone:twitter_setAccount", function(username, password, avatarUrl)
-  SendNUIMessage({event = 'twitter_setAccount', username = username, password = password, avatarUrl = avatarUrl})
-end)
-
-RegisterNetEvent("gcPhone:twitter_createAccount")
-AddEventHandler("gcPhone:twitter_createAccount", function(account)
-  SendNUIMessage({event = 'twitter_createAccount', account = account})
+AddEventHandler("gcPhone:twitter_setAccount", function(username, avatarUrl)
+  SendNUIMessage({event = 'twitter_setAccount', username = username, avatarUrl = avatarUrl})
 end)
 
 RegisterNetEvent("gcPhone:twitter_showError")
@@ -47,36 +38,30 @@ AddEventHandler("gcPhone:twitter_setTweetLikes", function(tweetId, isLikes)
   SendNUIMessage({event = 'twitter_setTweetLikes', tweetId = tweetId, isLikes = isLikes})
 end)
 
-
-
-RegisterNUICallback('twitter_login', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_login', data.username, data.password)
-end)
-RegisterNUICallback('twitter_changePassword', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_changePassword', data.username, data.password, data.newPassword)
+RegisterNUICallback('twitter_getTweets', function(cb)
+  TriggerServerEvent('gcPhone:twitter_getTweets')
 end)
 
-
-RegisterNUICallback('twitter_createAccount', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_createAccount', data.username, data.password, data.avatarUrl)
-end)
-
-RegisterNUICallback('twitter_getTweets', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_getTweets', data.username, data.password)
-end)
-
-RegisterNUICallback('twitter_getFavoriteTweets', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_getFavoriteTweets', data.username, data.password)
+RegisterNUICallback('twitter_getFavoriteTweets', function()
+  TriggerServerEvent('gcPhone:twitter_getFavoriteTweets')
 end)
 
 RegisterNUICallback('twitter_postTweet', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_postTweets', data.username or '', data.password or '', data.message)
+  TriggerServerEvent('gcPhone:twitter_postTweets', data.message, data.image)
 end)
 
 RegisterNUICallback('twitter_toggleLikeTweet', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_toogleLikeTweet', data.username or '', data.password or '', data.tweetId)
+  TriggerServerEvent('gcPhone:twitter_toogleLikeTweet', data.tweetId)
+end)
+
+RegisterNUICallback('twitter_toggleDeleteTweet', function(data, cb) 
+  TriggerServerEvent('gcPhone:twitter_toggleDeleteTweet', data.tweetId)
 end)
 
 RegisterNUICallback('twitter_setAvatarUrl', function(data, cb)
-  TriggerServerEvent('gcPhone:twitter_setAvatarUrl', data.username or '', data.password or '', data.avatarUrl)
+  TriggerServerEvent('gcPhone:twitter_setAvatarUrl', data.avatarUrl)
+end)
+
+RegisterNUICallback('twitter_changeUsername', function(data, cb)
+  TriggerServerEvent('gcPhone:twitter_changeUsername', data.newUsername)
 end)

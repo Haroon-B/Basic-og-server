@@ -32,7 +32,7 @@ CREATE TABLE `job_grades` (
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO `job_grades` VALUES (1,'unemployed',0,'unemployed','Unemployed',200,'{}','{}');
+INSERT INTO `job_grades` VALUES (1,'unemployed',0,'unemployed','Desempregado',200,'{}','{}');
 
 CREATE TABLE `jobs` (
 	`name` varchar(50) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `jobs` (
 	PRIMARY KEY (`name`)
 );
 
-INSERT INTO `jobs` VALUES ('unemployed','Unemployed');
+INSERT INTO `jobs` VALUES ('unemployed','Desempregado');
 
 CREATE TABLE `user_accounts` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,

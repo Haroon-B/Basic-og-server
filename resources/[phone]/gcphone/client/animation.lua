@@ -1,14 +1,11 @@
---====================================================================================
--- #Author: Jonathan D @ Gannon
---====================================================================================
-
 local myPedId = nil
 
 local phoneProp = 0
-local phoneModel = "prop_amb_phone"
--- OR "prop_npc_phone"
--- OR "prop_npc_phone_02"
--- OR "prop_cs_phone_01"
+local phoneModel = "prop_phone_ing_02"
+-- prop_phone_ing_03 - green
+-- prop_phone_ing_02 - white
+-- prop_phone_ing - blue
+
 
 local currentStatus = 'out'
 local lastDict = nil
@@ -50,21 +47,37 @@ local ANIMS = {
 	}
 }
 
-function newPhoneProp()
+function newPhoneProp(myPedId)
 	deletePhone()
 	RequestModel(phoneModel)
 	while not HasModelLoaded(phoneModel) do
-		Citizen.Wait(1)
+		Citizen.Wait(500)
 	end
-	phoneProp = CreateObject(phoneModel, 1.0, 1.0, 1.0, 1, 1, 0)
+	phoneProp = CreateObject(GetHashKey(phoneModel), 1.0, 1.0, 1.0, 1, 1, 0)
+
 	local bone = GetPedBoneIndex(myPedId, 28422)
 	AttachEntityToEntity(phoneProp, myPedId, bone, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 1, 0, 0, 2, 1)
+
 end
 
 function deletePhone ()
 	if phoneProp ~= 0 then
 		Citizen.InvokeNative(0xAE3CBE5BF394C9C9 , Citizen.PointerValueIntInitialized(phoneProp))
 		phoneProp = 0
+	end
+end
+
+function changePhoneType(type)
+	if type == "green_phone" then
+		phoneModel = "prop_phone_ing_03"
+	end
+
+	if type == "blue_phone" then
+		phoneModel = "prop_phone_ing"
+	end
+
+	if type == "white_phone" then
+		phoneModel = "prop_phone_ing_02"
 	end
 end
 
@@ -76,7 +89,10 @@ function PhonePlayAnim (status, freeze, force)
 		return
 	end
 
-	myPedId = GetPlayerPed(-1)
+	myPedId = PlayerPedId()
+
+	GiveWeaponToPed(myPedId, 0xA2719263, 0, 0, 1)
+	
 	local freeze = freeze or false
 
 	local dict = "cellphone@"
@@ -97,7 +113,7 @@ function PhonePlayAnim (status, freeze, force)
 
 	if status ~= 'out' and currentStatus == 'out' then
 		Citizen.Wait(380)
-		newPhoneProp()
+		newPhoneProp(myPedId)
 	end
 
 	lastDict = dict
@@ -110,7 +126,6 @@ function PhonePlayAnim (status, freeze, force)
 		deletePhone()
 		StopAnimTask(myPedId, lastDict, lastAnim, 1.0)
 	end
-
 end
 
 function PhonePlayOut ()
@@ -137,17 +152,3 @@ function loadAnimDict(dict)
 		Citizen.Wait(1)
 	end
 end
-
--- Citizen.CreateThread(function ()
--- 	Citizen.Wait(200)
--- 	PhonePlayCall()
--- 	Citizen.Wait(2000)
--- 	PhonePlayOut()
--- 	Citizen.Wait(2000)
-
--- 	PhonePlayText()
--- 	Citizen.Wait(2000)
--- 	PhonePlayCall()
--- 	Citizen.Wait(2000)
--- 	PhonePlayOut()
--- end)

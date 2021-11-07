@@ -12,7 +12,7 @@ Locales['en'] = {
 	['default_voice'] = 'Normal',
 
 	-- Menu Notification
-	['missing_rights'] = 'You do not have the ~r~rights~w~',
+	['missing_rights'] = 'You do not have the rights',
 	['no_vehicle'] = 'You are not in a vehicle',
 	['players_nearby'] = 'No players nearby',
 	['amount_invalid'] = 'Invalid amount',
@@ -29,12 +29,12 @@ Locales['en'] = {
 	['accessories_no_helmet'] = 'You do not have a Helmet / Hat',
 	['accessories_no_mask'] = 'You do not have a mask',
 
-	['admin_noclipon'] = 'NoClip ~g~ enabled',
-	['admin_noclipoff'] = 'NoClip ~r~ disabled',
-	['admin_godmodeon'] = 'Invincible ~g~ enabled',
-	['admin_godmodeoff'] = 'Invincible ~r~ disabled',
-	['admin_ghoston'] = 'Ghost mode ~g~ enabled',
-	['admin_ghostoff'] = 'Ghost mode ~r~ disabled',
+	['admin_noclipon'] = 'NoClip  enabled',
+	['admin_noclipoff'] = 'NoClip  disabled',
+	['admin_godmodeon'] = 'Invincible  enabled',
+	['admin_godmodeoff'] = 'Invincible  disabled',
+	['admin_ghoston'] = 'Ghost mode  enabled',
+	['admin_ghostoff'] = 'Ghost mode  disabled',
 	['admin_vehicleflip'] = 'Car returned',
 	['admin_tpmarker'] = 'Teleported on the marker!',
 	['admin_nomarker'] = 'No marker on the map!',
@@ -43,9 +43,9 @@ Locales['en'] = {
 	['mainmenu_subtitle'] = 'INTERACTION MENU',
 	['mainmenu_gps_button'] = 'GPS',
 	['mainmenu_voice_button'] = 'Voice',
-	['gps'] = 'GPS: ~b~%s',
-	['approach'] = 'Approach: ~b~%s',
-	['voice'] = 'Voice: ~b~%s',
+	['gps'] = 'GPS: %s',
+	['approach'] = 'Approach: %s',
+	['voice'] = 'Voice: %s',
 
 	-- Menu Voice Level
 	['voice_whisper'] = 'Whisper',

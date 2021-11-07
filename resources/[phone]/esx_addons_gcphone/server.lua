@@ -7,9 +7,10 @@ local PhoneNumbers        = {}
      type  = "ambulance",
      sources = {
         ['1'] = true
-     }
-   }
- }
+    },
+  }
+ },
+
 
 TriggerEvent('esx:getSharedObject', function(obj)
   ESX = obj
@@ -17,7 +18,7 @@ end)
 
 function notifyAlertSMS (number, alert, listSrc)
   if PhoneNumbers[number] ~= nil then
-	local mess = 'De #' .. alert.numero  .. ' : ' .. alert.message
+	local mess = '#' .. alert.numero  .. ' : ' .. alert.message
 	if alert.coords ~= nil then
 		mess = mess .. ' ' .. alert.coords.x .. ', ' .. alert.coords.y 
 	end
@@ -34,7 +35,7 @@ function notifyAlertSMS (number, alert, listSrc)
 end
 
 AddEventHandler('esx_phone:registerNumber', function(number, type, sharePos, hasDispatch, hideNumber, hidePosIfAnon)
-  print('= INFO = Enregistrement du telephone ' .. number .. ' => ' .. type)
+  --print('= INFO = Enregistrement du telephone ' .. number .. ' => ' .. type)
 	local hideNumber    = hideNumber    or false
 	local hidePosIfAnon = hidePosIfAnon or false
 

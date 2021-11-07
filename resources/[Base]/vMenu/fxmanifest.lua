@@ -6,7 +6,7 @@ games {'gta5'}
 -- Resource stuff
 name 'vMenu'
 description 'Server sided trainer for FiveM with custom permissions, using a custom MenuAPI. More info can be found at www.vespura.com/fivem'
-version 'v3.3.0-pre'
+version 'v3.4.0'
 author 'Tom Grobbe'
 url 'https://github.com/TomGrobbe/vMenu/'
 ui_page 'storage.html'

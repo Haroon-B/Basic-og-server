@@ -9,30 +9,29 @@ ESX.StartPayCheck = function()
 			local salary  = xPlayer.job.grade_salary
 
 			if salary > 0 then
-				if job == 'unemployed' then -- unemployed
+				if job == 'unemployed' then 
 					xPlayer.addAccountMoney('bank', salary)
-					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_help', salary), 'CHAR_BANK_MAZE', 9)
-				elseif Config.EnableSocietyPayouts then -- possibly a society
-					TriggerEvent('esx_society:getSociety', xPlayer.job.name, function (society)
-						if society ~= nil then -- verified society
+					TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'inform', text = 'You have recieved a paycheck for: $'..salary, length = 8000})
+				elseif Config.EnableSocietyPayouts then 
+					TriggerEvent('society:getSociety', xPlayer.job.name, function (society)
+						if society ~= nil then
 							TriggerEvent('esx_addonaccount:getSharedAccount', society.account, function (account)
-								if account.money >= salary then -- does the society money to pay its employees?
+								if account.money >= salary then 
 									xPlayer.addAccountMoney('bank', salary)
 									account.removeMoney(salary)
-	
-									TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+									TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'inform', text = 'You have recieved a paycheck for: $'..salary, length = 8000})
 								else
-									TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), '', _U('company_nomoney'), 'CHAR_BANK_MAZE', 1)
+									TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'error', text = 'The company you are employed at is unable to send you a paycheck at this time due to insufficient funds.', length = 8000})
 								end
 							end)
-						else -- not a society
+						else 
 							xPlayer.addAccountMoney('bank', salary)
-							TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+							TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'inform', text = 'You have recieved a paycheck for: $'..salary, length = 8000})
 						end
 					end)
-				else -- generic job
+				else 
 					xPlayer.addAccountMoney('bank', salary)
-					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+					TriggerClientEvent('mythic_notify:client:SendAlert', xPlayer.source, { type = 'inform', text = 'You have recieved a paycheck for: $'..salary, length = 8000})
 				end
 			end
 

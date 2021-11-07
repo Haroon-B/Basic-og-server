@@ -194,7 +194,7 @@ Config.Weapons = {
 			{ name = 'scope', label = _U('component_scope'), hash = GetHashKey('COMPONENT_AT_SCOPE_SMALL') }
 		}
 	},
-	
+
 	{
 		name = 'WEAPON_PUMPSHOTGUN',
 		label = _U('weapon_pumpshotgun'),
@@ -646,41 +646,6 @@ Config.Weapons = {
 		name = 'WEAPON_DOUBLEACTION',
 		label = _U('weapon_doubleaction'),
 		components = {}
-	},
+	}
 
-	{
-		name = 'WEAPON_PISTOL_MK2',
-		label = _U('weapon_pistol_mk2'),
-		components = {
-			{ name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey('COMPONENT_PISTOL_MK2_CLIP_01') },
-			{ name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey('COMPONENT_PISTOL_MK2_CLIP_02') },
-			{ name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey('COMPONENT_AT_PI_FLSH_02') },
-			{ name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey('COMPONENT_AT_PI_SUPP_02') },
-			{ name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey('COMPONENT_PISTOL_MK2_CAMO_03') }
-		}
-	},
-
-	{
-		name = 'WEAPON_SMG_MK2',
-		label = _U('weapon_smg_mk2'),
-		components = {
-			{ name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey('COMPONENT_SMG_MK2_CLIP_01') },
-			{ name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey('COMPONENT_SMG_MK2_CLIP_02') },
-			{ name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey('COMPONENT_AT_AR_FLSH') },
-			{ name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey('COMPONENT_AT_PI_SUPP') },
-			{ name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey('COMPONENT_SMG_MK2_CAMO_03') }
-		}
-	},
-
-	{
-		name = 'WEAPON_ASSAULTRIFLE_MK2',
-		label = _U('weapon_assaultrifle_mk2'),
-		components = {
-			{ name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey('COMPONENT_ASSAULTRIFLE_MK2_CLIP_01') },
-			{ name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey('COMPONENT_ASSAULTRIFLE_MK2_CLIP_02') },
-			{ name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey('COMPONENT_AT_AR_FLSH') },
-			{ name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey('COMPONENT_AT_AR_SUPP_02') },
-			{ name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey('COMPONENT_ASSAULTRIFLE_MK2_CAMO_03 ') }
-		}
-	},
 }

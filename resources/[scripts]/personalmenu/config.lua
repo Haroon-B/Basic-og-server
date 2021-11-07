@@ -16,14 +16,14 @@ Config = {}
 Config.Locale = 'en'
 
 -- GENERAL --
-Config.MenuTitle = 'DXRP' -- change it to you're server name
+Config.MenuTitle = 'VZ Dev' -- change it to you're server name
 Config.DoubleJob = false -- enable if you're using esx double job
 Config.NoclipSpeed = 1.0 -- change it to change the speed in noclip
 Config.JSFourIDCard = false -- enable if you're using jsfour-idcard
 
 -- CONTROLS --
 Config.Controls = {
-	OpenMenu = {keyboard = Keys['F5']},
+	OpenMenu = {keyboard = Keys['F4']},
 	HandsUP = {keyboard = Keys['~']},
 	Pointing = {keyboard = Keys['B']},
 	Crouch = {keyboard = Keys['LEFTCTRL']},
@@ -33,16 +33,12 @@ Config.Controls = {
 
 -- GPS --
 Config.GPS = {
-	{label = 'Aucun', coords = nil},
-	{label = 'Poste de Police', coords = vector2(425.13, -979.55)},
+	{label = 'Nil', coords = nil},
+	{label = 'Police Station', coords = vector2(425.13, -979.55)},
 	{label = 'Garage Central', coords = vector2(-449.67, -340.83)},
-	{label = 'Hôpital', coords = vector2(-33.88, -1102.37)},
-	{label = 'Concessionnaire', coords = vector2(215.06, -791.56)},
-	{label = 'Benny\'s Custom', coords = vector2(-212.13, -1325.27)},
-	{label = 'Pôle Emploie', coords = vector2(-264.83, -964.54)},
-	{label = 'Auto école', coords = vector2(-829.22, -696.99)},
-	{label = 'Téquila-la', coords = vector2(-565.09, 273.45)},
-	{label = 'Bahama Mamas', coords = vector2(-1391.06, -590.34)}
+	{label = 'Hospital', coords = vector2(-33.88, -1102.37)},
+	{label = 'Car dealer', coords = vector2(215.06, -791.56)},
+	{label = 'Benny\'s Custom', coords = vector2(-212.13, -1325.27)}
 }
 
 -- VOICE --
